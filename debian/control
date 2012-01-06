@@ -1,0 +1,37 @@
+Source: libtheora
+Section: libs
+Priority: optional
+Maintainer: Seungbae Shin <seungbae.shin@samsung.com>
+Build-Depends: autotools-dev, cdbs (>= 0.4.27-3), debhelper (>> 4.0.0), devscripts, doxygen, libogg-dev (>= 1.1.0), libvorbis-dev, python, libtool, automake, quilt, libpng12-dev
+Standards-Version: 3.7.2
+
+Package: libtheora0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}
+Description: The Theora Video Compression Codec
+ Theora is an open video codec being developed by the Xiph.org
+ Foundation as part of their Ogg project (It is a project that aims to
+ integrate On2's VP3 video codec, Ogg Vorbis audio codec and Ogg
+ multimedia container formats into a multimedia solution that can
+ compete with MPEG-4 format).  Theora is derived directly from On2's
+ VP3 codec; currently the two are nearly identical, varying only in
+ framing headers, but Theora will diverge and improve from the main
+ VP3 development lineage as time progresses.
+
+Package: libtheora-dev
+Architecture: any
+Section: libdevel
+Depends: libtheora0 (= ${binary:Version}), libogg-dev
+Description: The Theora Video Compression Codec (development files)
+ Theora is a fully open, non-proprietary, patent-and-royalty-free,
+ general-purpose compressed video format.
+ .
+ This package contains the header files and documentation needed to develop
+ applications with libtheora.
+
+Package: libtheora-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtheora0 (= ${Source-Version})
+Description: The Theora Video Compression Codec (unstripped)

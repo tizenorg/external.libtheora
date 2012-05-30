@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    BSD
 URL:        http://www.theora.org/
 Source0:    http://downloads.xiph.org/releases/theora/%{name}-%{version}.tar.bz2
+Source1001: packaging/libtheora.manifest 
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(ogg)
@@ -31,6 +32,7 @@ Description: Headers for Theora Video Compression Codec
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static \
     --enable-shared \
@@ -52,11 +54,13 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest libtheora.manifest
 %{_libdir}/libtheora.so.*
 %{_libdir}/libtheoradec.so.*
 %{_libdir}/libtheoraenc.so.*
 
 %files devel
+%manifest libtheora.manifest
 %{_includedir}/theora
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/theora.pc

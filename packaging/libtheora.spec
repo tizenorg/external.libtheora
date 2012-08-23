@@ -1,7 +1,7 @@
 Name:       libtheora
 Summary:    Theora Video Compression Codec
 Version:    1.1.1
-Release:    1
+Release:    2
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.theora.org/

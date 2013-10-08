@@ -46,6 +46,9 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp LICENSE %{buildroot}/usr/share/license/%{name}
+cat COPYING >> %{buildroot}/usr/share/license/%{name}
 %make_install
 rm -rf $RPM_BUILD_ROOT%{_docdir}
 
@@ -61,6 +64,7 @@ rm -rf %{buildroot}
 %{_libdir}/libtheora.so.*
 %{_libdir}/libtheoradec.so.*
 %{_libdir}/libtheoraenc.so.*
+/usr/share/license/%{name}
 
 %files devel
 %{_includedir}/theora

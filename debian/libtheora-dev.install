@@ -1,0 +1,5 @@
+usr/include/theora/*
+usr/lib/*.a
+usr/lib/*.la
+usr/lib/pkgconfig/*.pc
+usr/share/doc/libtheora-1.1.1/html/*
